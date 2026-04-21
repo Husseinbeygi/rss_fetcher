@@ -21,13 +21,8 @@ jobs:
           go-version: '1.25.5'
 
       - name: Run Scraper
-        env:
-          # Example: "https://site.com/rss|https://blog.com/feed"
-          RSS_URLS: ${{ secrets.RSS_URLS }}
-          # Example: "https://news.ycombinator.com,.titleline > a"
-          SCRAPE_URLS: ${{ secrets.SCRAPE_URLS }}
         run: |
-          go run main.go
+          ./rss_fetcher
 
       - name: Commit and Push
         run: |
